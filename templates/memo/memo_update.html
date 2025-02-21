@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+
+{% block title %}メモ内容編集{% endblock title %}
+{% block h1 %}編集画面{% endblock h1 %}
+
+{% block content %}
+    <div class="card p-3 m-4 bg-light border border-secondary">
+        <form method="post">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <button type="submit" class="btn btn-secondary">修正する</button>
+        </form>
+    </div>
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}メモ詳細{% endblock title %}
+{% block h1 %}メモ詳細{% endblock h1 %}
+
+{% block content %}
+    <div class="p-4 m-4 bh-light border border-secondary rounded">
+        <h2 class="border-bottom border-2 mb-4">{{Memo.title}}</h2>
+            <p class="mb-5 mx-2">{{ Memo.content }}</p>
+            <h6 class="card-title mb-4 mx-2 fw-light">カテゴリ：{{ Memo.tag }}</h6>
+            <a href="{% url 'memo-list' %}" class="btn btn-secondary ms-2">戻る</a>
+            <a href="{% url 'update-memo' Memo.pk %}" class="btn btn-secondary ms-2">編集する</a>
+            <a href="{% url 'delete-memo' Memo.pk %}" class="btn btn-secondary ms-2">削除する</a>
+    </div>
+{% endblock content %}
